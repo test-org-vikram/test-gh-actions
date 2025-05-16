@@ -11,3 +11,5 @@ jobs:
         run: | 
           echo ${{ vars.GH_TOKEN }}
           echo ${{ env.GH_AUTH_TOKEN }}
+      - name: Run a Python script
+        run: python main.py
