@@ -13,3 +13,5 @@ jobs:
           echo ${{ env.GH_AUTH_TOKEN }}
       - name: Run a Python script
         run: python main.py
+      - name: Access new variable
+        run: printenv | grep -i GH_AUTH_TOKEN
