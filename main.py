@@ -1,6 +1,6 @@
 import os
 
-TOKEN = os.environ.get("GH_AUTH_TOKEN")
+TOKEN = os.environ.get("SONAR_AUTH_TOKEN")
 
 # Print the value or handle if it's not set
 if TOKEN:
