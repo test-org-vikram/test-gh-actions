@@ -1,4 +1,3 @@
-	  
 name: GitHub Actions Demo
 run-name: Run ${{ github.run_number }} triggered by ${{ github.event_name }} event
 on: [push]
