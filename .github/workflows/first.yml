@@ -1,8 +1,6 @@
 name: GitHub Actions Demo
 run-name: Run ${{ github.run_number }} triggered by ${{ github.event_name }} event
 on: [push]
-env: 
-  GH_AUTH_TOKEN:  ${{ vars.GH_TOKEN }}
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -11,9 +9,4 @@ jobs:
         uses: actions/checkout@v4
       - name: Print variable
         run: | 
-          echo ${{ vars.GH_TOKEN }}
-          echo ${{ env.GH_AUTH_TOKEN }}
-      - name: Run a Python script
-        run: python main.py
-      - name: Access new variable
-        run: printenv | grep -i GH_AUTH_TOKEN
+          echo ${{ secrets.SONAR_TOKEN }}
