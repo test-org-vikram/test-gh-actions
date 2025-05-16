@@ -1,6 +1,8 @@
 name: GitHub Actions Demo
 run-name: Run ${{ github.run_number }} triggered by ${{ github.event_name }} event
 on: [push]
+env: 
+  SONAR_AUTH_TOKEN:  ${{ secrets.SONAR_TOKEN }}
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -10,3 +12,6 @@ jobs:
       - name: Print variable
         run: | 
           echo ${{ secrets.SONAR_TOKEN }}
+          echo ${{ env.SONAR_AUTH_TOKEN }}
+      - name: Run a Python script
+        run: python main.py
